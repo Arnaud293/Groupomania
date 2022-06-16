@@ -5,7 +5,7 @@ mongoose
   .connect(
     "mongodb+srv://" +
       process.env.DB_USER_PASS +
-      "@cluster0.yuineu7.mongodb.net/MERN",
+      "@ocp7.5lcamya.mongodb.net/test",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
