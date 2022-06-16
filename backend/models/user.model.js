@@ -14,6 +14,10 @@ const userSchema = new mongoose.Schema(
     email: { type: String, required: true, validate: [isEmail], trim: true },
     password: { type: String, required: true, max: 1024, minlength: 6 },
     bio: { type: String, max: 1024 },
+    picture: {
+      type: String,
+      default: "./uploads/profil/random-user.png",
+    },
     followers: { type: [String] },
     following: { type: [String] },
     likes: { type: [String] },
