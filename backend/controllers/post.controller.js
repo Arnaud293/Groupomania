@@ -48,4 +48,12 @@ module.exports.updatePost = (req, res) => {
   );
 };
 
-module.exports.deletePost = (req, res) => {};
+module.exports.deletePost = (req, res) => {
+  if (!ObjectId.isValid(req.params.id))
+    return res.status(400).send("Id unkown : " + req.params.id);
+
+  PostModel.findByIdAndRemove(req.params.id, (err, docs) => {
+    if (!err) res.send(docs);
+    else console.log("Cannot delete" + err);
+  });
+};
