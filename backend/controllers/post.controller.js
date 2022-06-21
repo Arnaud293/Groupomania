@@ -29,6 +29,23 @@ module.exports.createPost = async (req, res) => {
   }
 };
 
-module.exports.updatePost = (req, res) => {};
+module.exports.updatePost = (req, res) => {
+  if (!ObjectId.isValid(req.params.id))
+    return res.status(400).send("Id unkown : " + req.params.id);
+
+  const updatedRecord = {
+    message: req.body.message,
+  };
+
+  PostModel.findByIdAndUpdate(
+    req.params.id,
+    { $set: updatedRecord },
+    { new: true },
+    (err, docs) => {
+      if (!err) res.send(docs);
+      else console.log("Update error : " + err);
+    }
+  );
+};
 
 module.exports.deletePost = (req, res) => {};
