@@ -168,4 +168,24 @@ module.exports.editCommentPost = (req, res) => {
 module.exports.deleteCommentPost = (req, res) => {
   if (!ObjectId.isValid(req.params.id))
     return res.status(400).send("Id unkown : " + req.params.id);
+
+  try {
+    return PostModel.findByIdAndUpdate(
+      req.params.id,
+      {
+        $pull: {
+          comments: {
+            _id: req.body.commentId,
+          },
+        },
+      },
+      { new: true },
+      (err, docs) => {
+        if (!err) return res.send(docs);
+        else return res.status(400).send(err);
+      }
+    );
+  } catch (err) {
+    return res.status(400).send(err);
+  }
 };
