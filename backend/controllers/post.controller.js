@@ -88,4 +88,26 @@ module.exports.likePost = (req, res) => {
 module.exports.unlikePost = async (req, res) => {
   if (!ObjectId.isValid(req.params.id))
     return res.status(400).send("Id unkown : " + req.params.id);
+
+  try {
+    PostModel.findByIdAndUpdate(
+      req.params.id,
+      { $pull: { likers: req.body.id } },
+      { new: true },
+      (err, docs) => {
+        if (err) return res.status(400).send(err);
+      }
+    );
+    UserModel.findByIdAndUpdate(
+      req.body.id,
+      { $pull: { likes: req.params.id } },
+      { new: true },
+      (err, docs) => {
+        if (!err) res.send(docs);
+        else return res.status(400).send(err);
+      }
+    );
+  } catch (err) {
+    return res.status(400).send(err);
+  }
 };
