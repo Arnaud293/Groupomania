@@ -33,3 +33,5 @@ module.exports.signInErrors = (err) => {
 
   return errors;
 };
+
+module.exports.uploadErrors = (err) => {};
