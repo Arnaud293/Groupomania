@@ -1,0 +1,25 @@
+// UTILS
+@import './utils/variables';
+
+// BASES
+@import './base/base';
+@import './base/typography';
+
+// COMPONENTS
+
+@import'./components/form';
+@import './components/btn';
+@import'./components/cards';
+
+// LAYOUT
+
+@import './layout/header';
+@import './layout/containers';
+@import './layout/nav';
+@import './layout/footer';
+
+// PAGES
+
+@import './pages/connection';
+@import './pages/home';
+@import './pages/profil';

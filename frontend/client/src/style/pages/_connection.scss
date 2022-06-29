@@ -1,0 +1,15 @@
+.connection{
+    background: $color-tertiary;
+    z-index: 2;
+}
+
+
+.background-img{
+    position: absolute;
+    z-index: -1;
+    // mix-blend-mode: screen;
+    opacity: 0.1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

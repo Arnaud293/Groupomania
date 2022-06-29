@@ -1,0 +1,244 @@
+.btn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    height: 7vh;
+    margin-top: 3%;
+    @media screen and(max-width: 590px){
+        width: 60%;
+    }
+}
+
+.activ-btn{
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    width: 49%;
+    color: $color-tertiary;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.inactiv-btn{
+    background-color: rgba($color-tertiary, $alpha : 0.1);
+    border: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    width: 49%;
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+
+    &:hover{
+       background-color:
+       rgba($color: white, $alpha: 0.2);
+     
+    }
+}
+
+.main-btn{
+    background-color: $color-tertiary;
+    border: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    width: 60%;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+
+    &:hover{
+        background-color:white ;
+        color: $color-tertiary;
+        cursor: pointer;
+      
+    }
+}
+
+// HOMEPAGE
+
+// CREATEPOST What's new?
+
+.send-message-btn{
+    background-color: $color-primary;
+    border: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    width: 20%;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+    margin-top: 3px;
+
+    &:hover{
+        background-color:white ;
+        color: $color-primary;
+        cursor: pointer;
+      
+    }
+}
+
+.read-btn{
+    border: none;
+    background: none;
+    cursor: pointer;
+    color : $color-primary;
+    margin-right: 1%;
+
+    &:hover{
+        background-color: $color-primary;
+        color: white;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+}
+}
+
+.follow-btn{
+    border: none;
+    height: 80%;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    cursor: pointer;
+    background-color: $color-primary;
+    color: white;
+    margin-left: 6%;
+
+    &:hover{
+        background-color: white;
+        color: $color-primary;
+    }
+}
+
+.validation-btn{
+    border: none;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    cursor: pointer;
+    background-color: $color-primary;
+    color: white;
+    font-weight: bold;
+    width: 90px;
+
+    &:hover{
+        background-color: white;
+        color: $color-primary;
+    }
+}
+
+.modify-image-btn{
+    background-color: $color-tertiary;
+    border: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    width: 45%;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+    margin-top: 3px;
+
+    &:hover{
+        background-color:white ;
+        color: $color-tertiary;
+        cursor: pointer;
+      
+    }
+}
+
+.validation-image-profil-btn{
+    background-color: $color-primary;
+    border: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    width: 45%;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+    margin-top : -15px;
+
+    &:hover{
+        background-color:white ;
+        color: $color-primary;
+        cursor: pointer;
+      
+    }
+}
+
+.bio-btn{
+    background-color: $color-primary;
+    border: none;
+    border-radius: 20px 0px 20px 20px;
+    -webkit-border-radius: 20px 0px 20px 20px;
+    -moz-border-radius: 20px 0px 20px 20px;
+    -ms-border-radius: 20px 0px 20px 20px;
+    -o-border-radius: 20px 0px 20px 20px;
+    width: 40%;
+    min-width: 75px;
+    height: 35px;
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+    margin-top: 5px;
+    &:hover    
+{
+        background-color:white ;
+        color: $color-primary;
+        cursor: pointer;
+      
+    }
+}
+
+.followers-btn{
+    background-color: $color-tertiary;
+    border: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    width: 45%;
+    min-width: 120px;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+    margin-top: 3px;
+
+    &:hover{
+        background-color:white ;
+        color: $color-tertiary;
+        cursor: pointer;
+      
+    }
+}

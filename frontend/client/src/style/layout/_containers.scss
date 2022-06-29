@@ -1,0 +1,253 @@
+
+// .home-page-feed-container{
+//     background-color: white;
+//     position: absolute;
+//     height: 100%;
+//     width: 70%;
+//     margin-left: 10%;
+//     margin-top: 50px;
+// }
+
+.create-post-container{
+    background-color: $color-secondary;
+    border-radius: 15px;
+    // border: 1px solid $color-primary;
+    // width: 65%;
+    // height: 25%;
+    margin-left: 5%;
+    margin-top: 65px;
+    position: relative;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.profil-img-container{
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+
+    & img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid white;
+        object-fit: cover;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        margin-top: 2%;
+}
+}
+
+// readPosts 
+
+.read-post-cards-container{
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid $color-secondary;
+    // width: 65%;
+    height: auto;
+    min-height: 100px;
+    margin-left: 5%;
+    margin-top: 2%;
+    position: relative;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    grid-column-start: 2;
+}
+
+.left-post-img{
+    width: 70px;
+    height: 100%;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    display: flex;
+    justify-content: center;
+
+    & img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid $color-secondary;
+        object-fit: cover;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        margin-top: 15%;
+        margin-left: 15%;
+       
+    }
+}
+
+.read-post-cards{
+    display: grid;
+    // grid-template-rows: 1fr 80% 1fr;
+    margin-left: 1%;
+    padding: 1rem;
+    line-height: 1.5rem;
+
+    & span {
+        font-weight: bold;
+    }
+
+    & .date{
+        color: gray;
+        font-style: italic;
+        font-size: smaller;
+    }
+
+    & img{
+        object-fit: cover;
+        max-width: 100%;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        // padding-top: 1rem;
+        // padding-bottom: 1rem;
+}
+}
+
+.read-post-header{
+    display: grid;
+    grid-template-columns: 75% 1fr;
+}
+
+.read-post-message{
+    max-width: fit-content;
+    word-break: break-all;
+    max-width: 95%;
+}
+
+.read-post-message-bottom{
+    display: flex;
+    justify-content: flex-end;
+    // max-width: 95%;
+    padding-bottom: 2rem;
+
+    & img{
+        width: 26px;
+        height: 26px;
+        margin: 1%;
+        background-color: $color-secondary;
+        border: 5px solid $color-secondary;
+        margin-top: 3px;
+    }
+}
+
+.read-post-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 95%;
+    margin-top: -3%;
+
+    & img{
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.home-top-container{
+    display: grid;
+    grid-template-columns: 77px 1fr 25%;
+    height: auto;
+    min-height: 250px;
+}
+
+.feed-container{
+    display: grid;
+    grid-template-columns: 77px 1fr 25%;
+}
+
+// right-side
+
+.right-side-container{
+    width: 100%;
+    // height: 40%;
+    // display: flex;
+    position: relative;
+    // left: 66rem;
+     top: 4rem;  
+     grid-column-start: 3;
+     grid-row-start: 1; 
+
+ 
+ 
+ 
+}
+
+.popular-card-container{
+    width: 90%;
+    height: 85%;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.friends-hint-container{
+    width: 100%;
+    // height: 40%;
+    // display: flex;
+    position: relative;
+    // left: 66rem;
+     top: 4.5rem;  
+     grid-column-start: 3;
+     grid-row-start: 1; 
+}
+
+.hint-all-card-container{
+    width: 90%;
+    height: 80%;
+    margin-left: 4%;
+    margin-top: 1%;
+}
+
+// Comments : 
+
+.comment-post-container{
+    height: auto;
+    width: 95%;
+}
+
+// PROFIL PAGE 
+
+.main-profil-content-container{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 15px;
+    grid-column-start: 2;
+}
+
+.bio-container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bio-btn-container{
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+}
