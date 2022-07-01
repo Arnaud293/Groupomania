@@ -20,7 +20,7 @@ const Log = (props) => {
     }
 
   return (
-    <div class='connection-form-container'>
+        <div class='connection-form-container'>
         <div class="btn-container">
             <button id='login' onClick={handleModals} className={signInModal ? 'activ-btn' : 'inactiv-btn'}>
                 Connexion
@@ -28,10 +28,11 @@ const Log = (props) => {
             <button id="register" onClick={handleModals} className={signUpModal ? 'activ-btn' : 'inactiv-btn'}>
                 Inscription
             </button>
-            {signUpModal && <SignUpForm />}
-            {signInModal && <SignInForm />}
+            
         </div>
-    </div>
+        {signUpModal && <SignUpForm />}
+        {signInModal && <SignInForm />}
+        </div>
   )
 }
 
