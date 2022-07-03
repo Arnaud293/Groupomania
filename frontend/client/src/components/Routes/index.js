@@ -4,10 +4,12 @@ import Home from '../../pages/Home'
 import Profil from '../../pages/Profil';
 import Trending from '../../pages/Trending';
 import Login from "../../pages/Login";
+import Navbar from '../Navbar';
 
 const index = () => {
   return (
     <BrowserRouter>
+        
         <Routes>
         <Route path='/' element={<Login />} />
         <Route path="/home" element={<Home />} />
