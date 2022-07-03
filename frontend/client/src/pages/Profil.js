@@ -29,12 +29,12 @@ const Profil = () => {
       </div>
       ): (
         <div className='connection'>
-        <img src={Background} alt="team-pic" class='background-img'/>
+        <img src={Background} alt="team-pic" className='background-img'/>
       <header>
-      <div class="connection-page-logo">
+      <div className="connection-page-logo">
           <img src={Logo} alt="logo" />
       </div>
-      <div class="connection-page-logo-small">
+      <div className="connection-page-logo-small">
           <img src={LogoSmall} alt="logo" />
       </div>
       </header>
