@@ -14,3 +14,7 @@
     display: grid;
     grid-template-columns: 85px 1fr;
 }
+
+.profil-container{
+    grid-column-start: 2;
+}
