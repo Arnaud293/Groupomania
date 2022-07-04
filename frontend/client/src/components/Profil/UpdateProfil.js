@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateBio } from '../../actions/user.actions';
 import LeftNav from '../LeftNav';
+import { dateParser } from '../Utils';
 import UploadImg from './UploadImg';
 
 const UpdateProfil = () => {
@@ -54,7 +55,7 @@ const UpdateProfil = () => {
                     </>
                 )}
             </div>
-            <p>Membre depuis le :{userData.createdAt}</p>
+            <p>Membre depuis le :{dateParser(userData.createdAt)}</p>
             <input type="button" className="followers-btn" value="Abonnements:"/>
             <input type="button" className="followers-btn" value="Abonnés :"/>
         </div>
