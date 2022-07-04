@@ -83,12 +83,14 @@
 
 .friends-hint-card-top{
     font-size: 0.7rem;
-    display: flex;
+    // display: flex;
    
     & h1{
         color: white;
         margin-left: 3%;
         margin-top: 3%;
+        display: flex;
+        justify-content: space-between;
     }
 }
 
@@ -108,6 +110,11 @@
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
 }
+}
+
+span.cross{
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 // Comments : 
