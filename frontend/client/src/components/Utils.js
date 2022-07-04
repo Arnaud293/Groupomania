@@ -8,6 +8,7 @@ export const dateParser = (num) => {
     month: "short",
     day: "numeric",
   };
+  
   let timeStamp = Date.parse(num);
 
   let date = new Date(timeStamp).toLocaleDateString('fr-FR', options);
