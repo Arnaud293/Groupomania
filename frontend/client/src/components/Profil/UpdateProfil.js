@@ -38,7 +38,7 @@ const UpdateProfil = () => {
                         <div key={user._id} className="hint-card">
                             <img src={user.picture} alt='user-picture' />
                             <p>{user.pseudo}</p>
-                            <FollowHandler idToFollow={user._id} />
+                            <FollowHandler idToFollow={user._id} type={'suggestion'} />
                         </div>)
                        } 
                     }
@@ -61,7 +61,7 @@ const UpdateProfil = () => {
                         <div key={user._id} className="hint-card">
                             <img src={user.picture} alt='user-picture' />
                             <p>{user.pseudo}</p>
-                            <FollowHandler idToFollow={user._id} />
+                            <FollowHandler idToFollow={user._id} type={'suggestion'} />
                         </div>)
                        } 
                     }

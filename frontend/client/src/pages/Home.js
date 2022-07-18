@@ -1,10 +1,16 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import LeftNav from '../components/LeftNav';
+import Thread from '../components/Thread';
 
 const Home = () => {
   return (
     
-    <div><Navbar/> </div>
+    <div className='home'>
+      <Navbar/> 
+      <LeftNav />
+      <Thread />
+    </div>
   )
 }
 
