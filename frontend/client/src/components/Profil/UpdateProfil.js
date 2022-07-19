@@ -63,7 +63,7 @@ const UpdateProfil = () => {
                             <p>{user.pseudo}</p>
                             <FollowHandler idToFollow={user._id} type={'suggestion'} />
                         </div>)
-                       } 
+                       } else return null;
                     }
                 })}
               </div>
