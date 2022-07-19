@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { dateParser, isEmpty } from '../Utils';
 import FollowHandler from '../Profil/FollowHandler';
+import LikeButton from './LikeButton';
+
+// SRC
+import CommentIcon from '../../src/icons/message2.svg';
+import SharingIcon from '../../src/icons/share.svg';
 
 const Card = ({post}) => {
 
@@ -59,14 +64,11 @@ const Card = ({post}) => {
                 </div>
                 <div className="read-post-footer">
                     <div className="interaction-count">
-                        <img src="../../../public/icons/message2.svg" alt="comment-icon"/>
+                        <img src={CommentIcon} alt="comment-icon"/>
                         <p>{post.comments.length}</p>
                     </div>
-                    <div className="interaction-count">
-                        <img src="../../../public/icons/heart.svg" alt="like-icon"/>
-                        <p>7</p>
-                    </div>
-                    <img src="../../../public/icons/share." alt="share-icon"/>
+                    <LikeButton post={post}/>
+                    <img src={SharingIcon} alt="share-icon"/>
                 </div>
             </div>
             
