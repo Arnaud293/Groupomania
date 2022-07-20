@@ -31,7 +31,7 @@ const Thread = () => {
   }, [loadPost])
 
   return (
-    <div class="home-top-container">
+    
         <div className='feed-container'>
             {!isEmpty(posts[0]) && (
                 posts.map((post) => {
@@ -39,7 +39,7 @@ const Thread = () => {
                 })
             )}
         </div>
-    </div>
+   
   )
 }
 

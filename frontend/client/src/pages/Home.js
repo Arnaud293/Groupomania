@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import LeftNav from '../components/LeftNav';
 import Thread from '../components/Thread';
+import NewPostForm from '../components/Post/NewPostForm';
 
 const Home = () => {
   return (
@@ -9,7 +10,10 @@ const Home = () => {
     <div className='home'>
       <Navbar/> 
       <LeftNav />
-      <Thread />
+      <div className='home-top-container'>
+        <NewPostForm/>
+        <Thread />
+      </div>
     </div>
   )
 }
