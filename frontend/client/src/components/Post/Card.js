@@ -8,15 +8,16 @@ import LikeButton from './LikeButton';
 import CommentIcon from '../../src/icons/message2.svg';
 import SharingIcon from '../../src/icons/share.svg';
 import EditIcon from '../../src/icons/edit.svg';
-import DeleteIcon from '../../src/icons/trash.svg';
 import { getPosts, updatePost } from '../../actions/post.actions';
 import DeleteCard from './DeleteCard';
+import CardComments from './CardComments';
 
 const Card = ({post}) => {
 
  const [isLoading, setIsLoading] = useState(true);
  const [isUpdated, setIsUpdated] = useState(false);
  const [textUpdate, setTextUpdate] = useState(null);
+ const [showComments, setShowComments] = useState(false);
  const usersData = useSelector((state) => state.usersReducer);
  const userData = useSelector((state) => state.userReducer);
  const dispatch = useDispatch();
@@ -97,12 +98,13 @@ const Card = ({post}) => {
                 </div>
                 <div className="read-post-footer">
                     <div className="interaction-count">
-                        <img src={CommentIcon} alt="comment-icon"/>
+                        <img src={CommentIcon} alt="comment-icon" onClick={() => setShowComments(!showComments)}/>
                         <p>{post.comments.length}</p>
                     </div>
                     <LikeButton post={post}/>
                     <img src={SharingIcon} alt="share-icon"/>
                 </div>
+                {showComments && <CardComments post={post}/>}
             </div>
             
             </>
