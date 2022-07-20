@@ -163,14 +163,15 @@ span.cross{
 }
 
 .edit-comment{
-    height: 20px;
-    display: flex;
+    // height: 20px;
+    // display: flex;
     justify-content: flex-end;
 
     &-img{
         height: 20px;
     }
 }
+
 
 .edit-comment-input{
     resize: none;
