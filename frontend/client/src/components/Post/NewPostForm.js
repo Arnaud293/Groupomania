@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { isEmpty, timeStampParser } from '../Utils';
 
 // SRC
 
 import PictureIcon from '../../src/icons/picture.svg';
+import { addPost, getPosts } from '../../actions/post.actions';
 
 const NewPostForm = () => {
 
@@ -15,11 +16,32 @@ const NewPostForm = () => {
   const [postVideo, setPostVideo] = useState('');
   const [file, setFile] = useState();
   const userData = useSelector((state) => state.userReducer);
+  const dispatch = useDispatch();
 
 
-  const handlePicture = () => {};
 
-  const handlePost = () => {};
+  const handlePost = async () => {
+    if(message || postPicture || postVideo){
+        const data = new FormData();
+        data.append('posterId', userData._id);
+        data.append('message', message);
+        if(file){
+            data.append('file', file);
+        }
+        data.append('postVideo', postVideo);
+
+        await dispatch(addPost(data));
+        dispatch(getPosts());
+        cancelPost();
+    } else alert ('?')
+  };
+
+  const handlePicture = (e) => {
+    setPostPicture(URL.createObjectURL(e.target.files[0]));
+    setFile(e.target.files[0]);
+    setPostVideo('');
+
+  };
 
   const cancelPost = () => {
     setMessage('');
@@ -110,7 +132,7 @@ const NewPostForm = () => {
                     <div>
                         <img src={PictureIcon} alt="icon-pic"/>
                         <input type='file' id='file-upload' name='file' accept='.jpg, .png, .jpeg'
-                        onChange={handlePicture()}/>
+                        onChange={(e) => handlePicture(e)}/>
                     </div>
                     </>
                     )}
@@ -123,7 +145,7 @@ const NewPostForm = () => {
                         {message || postPicture || postVideo.length > 20 ? (
                         <input className='send-message-btn' value='Annuler' type='button' onClick={cancelPost} />
                         ) : null}
-                        <input className='send-message-btn' value='Envoyer' type='button' onClick={handlePost()} />
+                        <input className='send-message-btn' value='Envoyer' type='button' onClick={handlePost} />
                     </div>
                 </div>
             </div>
