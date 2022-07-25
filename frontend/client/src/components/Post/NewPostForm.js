@@ -28,11 +28,26 @@ const NewPostForm = () => {
     setFile('');
   };
 
+
+  const handleVideo = () => {
+    let findLink = message.split(' ');
+    for (let i = 0; i < findLink.length; i++){
+        if(findLink[i].includes('https://www.yout') || findLink[i].includes('https://yout')){
+            let embed = findLink[i].replace('watch?v=', 'embed/');
+            setPostVideo(embed.split('&')[0]);
+            findLink.splice(i, 1);
+            setMessage(findLink.join(" "));
+            setPostPicture('');
+        }
+    }
+  }
+
   useEffect(() => {
     if (!isEmpty(userData)){
         setIsLoading(false);
+        handleVideo()
     }
-  }, [userData])
+  }, [userData, message, postVideo])
 
   return (
     <div className='create-post-container'>
@@ -72,9 +87,14 @@ const NewPostForm = () => {
                                 </p>
                                 <img src={postPicture} alt="post-picture"/>
                                 {setPostVideo && (
-                                    <iframe>
-                                        src={postVideo},
-                                        frameborder='0',
+                                    <iframe
+                                        src={postVideo}
+                                        frameborder='0'
+                                        allow='accelerometer; autoplay; clipboard-write; 
+                                        encrypted-media; gyroscope; picture-in-picture'
+                                        allowFullScreen
+                                        title={postVideo}
+                                        >
                                     </iframe>
                                 )}
                             </div>
