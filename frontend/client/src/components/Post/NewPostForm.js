@@ -16,6 +16,7 @@ const NewPostForm = () => {
   const [postVideo, setPostVideo] = useState('');
   const [file, setFile] = useState();
   const userData = useSelector((state) => state.userReducer);
+  const error = useSelector((state) => state.errorReducer.postErrors)
   const dispatch = useDispatch();
 
 
@@ -34,7 +35,7 @@ const NewPostForm = () => {
         dispatch(getPosts());
         cancelPost();
     } else alert ('?')
-  };
+  }
 
   const handlePicture = (e) => {
     setPostPicture(URL.createObjectURL(e.target.files[0]));
@@ -140,6 +141,8 @@ const NewPostForm = () => {
                     {postVideo && (
                         <input onClick={() => setPostVideo('')} type="button" className='send-message-btn' value='Supprimer vidéo' />
                     )}
+                    {!isEmpty(error.format) && <p>{error.format}</p>}
+                    {!isEmpty(error.maxSize) && <p>{error.maxSize}</p>}
 
                     <div className='post-btn'>
                         {message || postPicture || postVideo.length > 20 ? (
