@@ -24,7 +24,6 @@ const Hot = () => {
  }, [posts])
 
   return (
-    <div class="right-side-container">
         <div class="right-side-card">
           <div class="hot-posts">
             <h1>Populaires</h1>
@@ -44,7 +43,7 @@ const Hot = () => {
             
           </div>
         </div>
-    </div>
+
   )
 }
 
