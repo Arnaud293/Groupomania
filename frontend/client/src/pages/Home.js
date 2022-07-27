@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import LeftNav from '../components/LeftNav';
 import Thread from '../components/Thread';
 import NewPostForm from '../components/Post/NewPostForm';
+import Hot from '../components/Hot';
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <div className='home-top-container'>
         <NewPostForm/>
         <Thread />
+        <Hot />
       </div>
     </div>
   )

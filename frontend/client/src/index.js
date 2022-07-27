@@ -12,6 +12,7 @@ import { getUsers } from './actions/users.actions';
 // DevTools
 import logger from 'redux-logger';
 import {composeWithDevTools} from 'redux-devtools-extension';
+import { getPosts } from './actions/post.actions';
 
 
 
@@ -20,6 +21,7 @@ const store = createStore(
 );
 
 store.dispatch(getUsers());
+store.dispatch(getPosts());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
