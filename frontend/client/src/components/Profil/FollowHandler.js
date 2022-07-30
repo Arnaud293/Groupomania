@@ -15,18 +15,18 @@ const FollowHandler = ({idToFollow, type}) => {
     const dispatch = useDispatch();
 
     const handleFollow = () => {
-      dispatch(followUser(userData._id, idToFollow.idToFollow));
+      dispatch(followUser(userData._id, idToFollow));
       setIsFollowed(true);
     };
     const handleUnfollow = () => {
-      dispatch(unfollowUser(userData._id, idToFollow.idToFollow));
+      dispatch(unfollowUser(userData._id, idToFollow));
       setIsFollowed(false);
     };
 
     useEffect(() => {
 
       if(!isEmpty(userData.following)){
-        if(userData.following.includes(idToFollow.idToFollow)){
+        if(userData.following.includes(idToFollow)){
           // debugger;
           setIsFollowed(true);
 
@@ -43,7 +43,7 @@ const FollowHandler = ({idToFollow, type}) => {
       {isFollowed && !isEmpty(userData) && (
         <span onClick={handleUnfollow}>
           {type === "suggestion" &&<button className="follow-btn">Abonné</button>}
-          {type === "card" && <img src={CheckedIcon} />}
+          {type === "card" && <img className='follow-icon'src={CheckedIcon} />}
         </span>
         )}
       
@@ -52,7 +52,7 @@ const FollowHandler = ({idToFollow, type}) => {
       {isFollowed === false && !isEmpty(userData) && (
         <span onClick={handleFollow}>
          {type === "suggestion" &&<button className="follow-btn">Suivre</button>}
-         {type === "card" && <img src={CheckIcon} />}
+         {type === "card" && <img className='follow-icon' src={CheckIcon} />}
         </span>
       )}
       
