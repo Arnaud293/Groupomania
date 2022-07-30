@@ -1,8 +1,7 @@
 export const dateParser = (num) => {
   let options = {
-    hours: "2-digit",
+    hour: "2-digit",
     minute: "2-digit",
-    second: "2-digit",
     weekday: "long",
     year: "numeric",
     month: "short",
@@ -18,9 +17,8 @@ export const dateParser = (num) => {
 
 export const timeStampParser = (num) => {
   let options = {
-    hours: "2-digit",
+    hour: "2-digit",
     minute: "2-digit",
-    second: "2-digit",
     weekday: "long",
     year: "numeric",
     month: "short",
