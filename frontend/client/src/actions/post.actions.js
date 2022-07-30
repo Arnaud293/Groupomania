@@ -41,21 +41,17 @@ export const getPosts = (num) => {
 
 export const addPost = (data) => {
     return (dispatch) => {
-        return axios ({
-            method : 'post',
-            url : `${process.env.REACT_APP_API_URL}api/post/`, data
-            
-        })
+      return axios
+        .post(`${process.env.REACT_APP_API_URL}api/post/`, data)
         .then((res) => {
-            if(res.data.errors) {
-                dispatch({type: GET_POSTS_ERRORS, payload : res.data.errors})
-            }
-            else {
-                dispatch({type: GET_POSTS_ERRORS, payload: ''});
-            }
-        })
-    }
-}
+          if (res.data.errors) {
+            dispatch({ type: GET_POSTS_ERRORS, payload: res.data.errors });
+          } else {
+            dispatch({ type: GET_POSTS_ERRORS, payload: "" });
+          }
+        });
+    };
+  };
 
 export const likePost = (postId, userId) => {
     return (dispatch) => {
