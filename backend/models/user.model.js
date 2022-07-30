@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema(
     bio: { type: String, max: 1024 },
     picture: {
       type: String,
-      default: "./uploads/profil/random-user.png",
+      default: "./uploads/profil/random-user.jpg",
     },
     followers: { type: [String] },
     following: { type: [String] },
