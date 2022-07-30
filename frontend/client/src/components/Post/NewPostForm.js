@@ -20,6 +20,12 @@ const NewPostForm = () => {
   const dispatch = useDispatch();
 
 
+  const handlePicture = (e) => {
+    setPostPicture(URL.createObjectURL(e.target.files[0]));
+    setFile(e.target.files[0]);
+    setPostVideo('');
+
+    };
 
   const handlePost = async () => {
     if(message || postPicture || postVideo){
@@ -29,20 +35,13 @@ const NewPostForm = () => {
         if(file){
             data.append('file', file);
         }
-        data.append('postVideo', postVideo);
+        data.append('video', postVideo);
 
         await dispatch(addPost(data));
         dispatch(getPosts());
         cancelPost();
     } else alert ('?')
   }
-
-  const handlePicture = (e) => {
-    setPostPicture(URL.createObjectURL(e.target.files[0]));
-    setFile(e.target.files[0]);
-    setPostVideo('');
-
-  };
 
   const cancelPost = () => {
     setMessage('');
@@ -94,7 +93,7 @@ const NewPostForm = () => {
                 />
                 {message || postPicture || postVideo.length > 20 ? (
                     
-                        <div class="read-post-cards-container">
+                        <div class="read-new-post-cards-container">
                             <div class="left-post-img">
                                 <img src={userData.picture} alt="user-pic"/>
                             </div>
@@ -104,12 +103,14 @@ const NewPostForm = () => {
                                     <p class="date">{timeStampParser(Date.now())}</p>
                                 </div>
                             </div>
-                            <div class="read-post-message">
+                            <div class="read-new-post-message">
                                 <p> 
                                     {message}          
                                 </p>
-                                <img src={postPicture} alt="post-picture"/>
-                                {setPostVideo && (
+                                <br/>
+                                {postPicture && (
+                                <img src={postPicture} alt="post-picture"/>)}
+                                {postVideo && (
                                     <iframe
                                         src={postVideo}
                                         frameborder='0'
