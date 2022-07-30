@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
 import { uploadPicture } from '../../actions/user.actions';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 const UploadImg = () => {
 
