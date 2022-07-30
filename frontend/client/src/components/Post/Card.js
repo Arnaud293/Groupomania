@@ -53,12 +53,14 @@ const Card = ({post}) => {
                     <span>{
                     !isEmpty(usersData[0]) && usersData.map((user) => {
                         if(user._id === post.posterId) return user.pseudo;
+                        
                         else {return null;}
                     })
                     }
-                    </span>
                     {post.posterId !== userData._id && (
                     <FollowHandler idToFollow={post.posterId} type={'card'}/>)}
+                    </span>
+                    
                     <p className="date">{dateParser(post.createdAt)}</p>
                 </div>
                 <div className="read-post-message">
@@ -67,11 +69,11 @@ const Card = ({post}) => {
                     </p>}
                     {isUpdated && (
                         <div className='update-post'>
-                            <textarea
+                            <textarea id='update-message'
                             defaultValue={post.message}
                             onChange={(e) => setTextUpdate(e.target.value)}
                             />
-                            <div className='btn-container'>
+                            <div className='update-btn-container'>
                                 <button className='validation-btn' onClick={updateItem}>Valider</button>
                             </div>
                         </div>
