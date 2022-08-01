@@ -1,9 +1,12 @@
 const UserModel = require("../models/user.model");
 const fs = require("fs");
 const { promisify } = require("util");
+const { dirname } = require('path');
 const { uploadErrors } = require("../utils/errors.utils");
 const pipeline = promisify(require("stream").pipeline);
-const filesDestination = `${__dirname}/../../frontend/client/public/uploads/profil/`
+const filesDestination = `${__dirname}/../../frontend/client/public/uploads/profil/`;
+const multer = require('multer');
+const {existsSync} = require('fs');
 
 module.exports.uploadProfil = async (req, res) => {
   const MIME_TYPES = {
@@ -29,32 +32,34 @@ module.exports.uploadProfil = async (req, res) => {
   await pipeline(
     req.file.stream,
     fs.createWriteStream(
-      `${__dirname}/../../frontend/client/public/uploads/profil/${fileName}`
+      `${__dirname}/../../frontend/client/public/uploads/profil/${fileName}`,
     )
   );
   try {
     if (fs.existsSync(filesDestination)) {
-      fs.unlink(filesDestination);
+      fs.unlink(fileName, (err) => {
+        if(err) console.log(err);
+      });}
     await UserModel.findByIdAndUpdate(
       req.body.userId,
-      { $set: { picture: `./uploads/profil/${fileName}` } },
+      { $set: { picture: './uploads/profil/' + fileName } },
       { new: true, upsert: true, setDefaultsOnInsert: true },
-      (err, docs) => {
-        if (!err) res.send(docs);
-        else return res.status(500).send({ message: err });
-      }
+      // (err, docs) => {
+      //   if (!err) res.send(docs);
+      //   else return res.status(500).send({ message: err });
+      // }
     );
-    } 
-    else {
-    await UserModel.findByIdAndUpdate(
-      req.body.userId,
-      { $set: { picture: `./uploads/profil/${fileName}` } },
-      { new: true, upsert: true, setDefaultsOnInsert: true },
-      (err, docs) => {
-        if (!err) res.send(docs);
-        else return res.status(500).send({ message: err });
-      }
-    );}
+    // } 
+    // else {
+    // await UserModel.findByIdAndUpdate(
+    //   req.body.userId,
+    //   { $set: { picture: './uploads/profil/' + fileName } },
+    //   { new: true, upsert: true, setDefaultsOnInsert: true },
+    //   (err, docs) => {
+    //     if (!err) res.send(docs);
+    //     else return res.status(500).send({ message: err });
+    //   }
+    // );}
   } catch (err) {
     return res.status(500).send({ message: err });
   }
