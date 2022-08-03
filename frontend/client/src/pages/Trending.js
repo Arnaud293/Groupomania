@@ -12,10 +12,11 @@ const Trending = () => {
   const hotList = useSelector((state) => state.hotReducer);
 
   return (
-    <div>
+    <div className='Trending'>
       <Navbar/> 
       <LeftNav />
       <div className='main'>
+        <div className='padding'></div>
         {!isEmpty(hotList[0]) && hotList.map((post) => <Card post={post} key={post._id}/> )}
       </div>
     </div>

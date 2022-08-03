@@ -280,3 +280,12 @@
     backdrop-filter: blur(3px);
 }
 
+.main {
+    display: grid;
+    grid-template-columns: 77px 1fr 20px;
+}
+
+.padding {
+    grid-column-start: 2;
+    margin-bottom: 52px;
+}
