@@ -32,7 +32,16 @@ const Hot = () => {
             {hotList.length && hotList.map((post) => {
                 return (
                     <div key={post._id} class="popular-card">
-                        <img src={userData.picture} alt="poster-picture"/>
+                        <img src={
+                          usersData[0] &&
+                          usersData
+                            .map((user) => {
+                              if (user._id === post.posterId) {
+                                return user.picture;
+                              } else return null;
+                            })
+                            .join("")
+                        } alt="poster-picture"/>
                         <p>{post.message}</p>
                         <NavLink exact to='/trending'>
                         <input type="button" class="read-btn" value="Lire"/>
