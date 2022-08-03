@@ -63,6 +63,7 @@ const Card = ({post}) => {
                     
                     <p className="date">{dateParser(post.createdAt)}</p>
                 </div>
+                <br/>
                 <div className="read-post-message">
                     {isUpdated === false && <p>
                         {post.message}
@@ -81,7 +82,7 @@ const Card = ({post}) => {
                     {post.picture && <img src={post.picture} alt='card-pic' />}
                     {post.video && (
                         <iframe
-                        width="500"
+                        width="100%"
                         height='300'
                         src={post.video}
                         frameBorder='0'
@@ -89,7 +90,13 @@ const Card = ({post}) => {
                         allowFullScreen>
                         </iframe>
                     )}
-                    {userData._id === post.posterId && (
+                    {userData._id === post.posterId && userData.admin === false && (
+                        <div class="read-post-message-bottom">
+                            <img src={EditIcon} alt="icon-edit" onClick={() => setIsUpdated(!isUpdated)}/>
+                            <DeleteCard id={post._id}/>
+                        </div>
+                    )}
+                    {userData.admin === true && (
                         <div class="read-post-message-bottom">
                             <img src={EditIcon} alt="icon-edit" onClick={() => setIsUpdated(!isUpdated)}/>
                             <DeleteCard id={post._id}/>
@@ -98,6 +105,7 @@ const Card = ({post}) => {
                     
 
                 </div>
+                <br/>
                 <div className="read-post-footer">
                     <div className="interaction-count">
                         <img src={CommentIcon} alt="comment-icon" onClick={() => setShowComments(!showComments)}/>

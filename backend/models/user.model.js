@@ -19,6 +19,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "./uploads/profil/random-user.jpg",
     },
+    admin: {type : Boolean, default : false},
     followers: { type: [String] },
     following: { type: [String] },
     likes: { type: [String] },
