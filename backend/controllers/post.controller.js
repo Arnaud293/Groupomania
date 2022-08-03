@@ -37,7 +37,7 @@ module.exports.createPost = async (req, res) => {
       }
     } catch (err) {
       const errors = uploadErrors(err);
-      return res.status(400).json({ err });
+      return res.status(400).json({ errors });
     }
 
     fileName = req.body.posterId + Date.now() + ".jpg";

@@ -44,22 +44,8 @@ module.exports.uploadProfil = async (req, res) => {
       req.body.userId,
       { $set: { picture: './uploads/profil/' + fileName } },
       { new: true, upsert: true, setDefaultsOnInsert: true },
-      // (err, docs) => {
-      //   if (!err) res.send(docs);
-      //   else return res.status(500).send({ message: err });
-      // }
     );
-    // } 
-    // else {
-    // await UserModel.findByIdAndUpdate(
-    //   req.body.userId,
-    //   { $set: { picture: './uploads/profil/' + fileName } },
-    //   { new: true, upsert: true, setDefaultsOnInsert: true },
-    //   (err, docs) => {
-    //     if (!err) res.send(docs);
-    //     else return res.status(500).send({ message: err });
-    //   }
-    // );}
+    
   } catch (err) {
     return res.status(500).send({ message: err });
   }
