@@ -5,6 +5,7 @@ import LeftNav from "../LeftNav";
 import { dateParser } from "../Utils";
 import UploadImg from "./UploadImg";
 import FollowHandler from "./FollowHandler";
+import ResponsiveNav from '../ResponsiveNav';
 
 const UpdateProfil = () => {
   const [bio, setBio] = useState("");
@@ -26,6 +27,16 @@ const UpdateProfil = () => {
   return (
     <div className="profil-container">
       {/* POPUP ON TOP FOR BLUR MOD */}
+      
+
+      <LeftNav />
+
+      <div className="top-profil-content">
+        <h1>Profil de {userData.pseudo}</h1>
+      </div>
+      <ResponsiveNav />
+      <div className="main-profil-content-container">
+
       {followersPopup && (
         <div className="popup-container">
           <div className="friends-hint-card">
@@ -97,12 +108,6 @@ const UpdateProfil = () => {
         </div>
       )}
 
-      <LeftNav />
-
-      <div className="top-profil-content">
-        <h1>Profil de {userData.pseudo}</h1>
-      </div>
-      <div className="main-profil-content-container">
         <div className="main-profil-content-card">
           <h2>Ma photo de profil</h2>
           <img src={userData.picture} alt="profil-picture" />

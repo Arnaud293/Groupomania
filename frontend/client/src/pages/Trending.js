@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { UidContext } from '../components/AppContext'
 import LeftNav from '../components/LeftNav';
 import Navbar from '../components/Navbar';
+import ResponsiveNav from '../components/ResponsiveNav';
 import Card from '../components/Post/Card';
 import { isEmpty } from '../components/Utils';
 
@@ -17,6 +18,7 @@ const Trending = () => {
       <LeftNav />
       <div className='main'>
         <div className='padding'></div>
+        <ResponsiveNav />
         {!isEmpty(hotList[0]) && hotList.map((post) => <Card post={post} key={post._id}/> )}
       </div>
     </div>

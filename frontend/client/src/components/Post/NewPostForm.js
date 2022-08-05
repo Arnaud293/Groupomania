@@ -144,6 +144,7 @@ const NewPostForm = () => {
                     )}
                     {!isEmpty(error.format) && <p>{error.format}</p>}
                     {!isEmpty(error.maxSize) && <p>{error.maxSize}</p>}
+                    
 
                     <div className='post-btn'>
                         {message || postPicture || postVideo.length > 20 ? (

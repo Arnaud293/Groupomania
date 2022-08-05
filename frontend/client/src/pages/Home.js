@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Navbar from '../components/Navbar';
 import LeftNav from '../components/LeftNav';
+import ResponsiveNav from '../components/ResponsiveNav';
 import Thread from '../components/Thread';
 import NewPostForm from '../components/Post/NewPostForm';
 import Hot from '../components/Hot';
@@ -14,9 +15,10 @@ const Home = () => {
   return (
     
     <div className='home'>
-      <Navbar/> 
+      <Navbar /> 
       <LeftNav />
       <div className='home-top-container'>
+        <ResponsiveNav />
         <NewPostForm/>
         <Thread />
         {uid && <FriendsHint />}
