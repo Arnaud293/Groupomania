@@ -31,9 +31,9 @@ export const getPosts = (num) => {
             url : `${process.env.REACT_APP_API_URL}api/post/`
         })
         .then ((res) => {
-            const array = res.data.slice(0, num)
-            dispatch({type : GET_POSTS, payload : array})
-            dispatch({type: GET_ALL_POSTS, payload : res.data})
+            const array = res.data.slice(0, num);
+            dispatch({type : GET_POSTS, payload : array});
+            dispatch({type: GET_ALL_POSTS, payload : res.data});
         })
         .catch ((err) => console.log(err));
     }
@@ -49,7 +49,15 @@ export const addPost = (data) => {
           } else {
             dispatch({ type: GET_POSTS_ERRORS, payload: "" });
           }
-        });
+        })
+        .catch((err) => {
+            console.log(err);
+            if (err.response.data.errors) {
+                dispatch({ type: GET_POSTS_ERRORS, payload: err.response.data.errors });
+              } else {
+                dispatch({ type: GET_POSTS_ERRORS, payload: "" });
+              }
+        })
     };
   };
 
