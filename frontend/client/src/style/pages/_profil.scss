@@ -7,12 +7,21 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
+
+        @media (max-width: 400px){
+        height: 117%;
+        text-align: center;
+        font-size: larger;
+        }
     }
 }
 
 .profil{
     display: grid;
     grid-template-columns: 85px 1fr;
+    @media (max-width: 400px){
+        grid-template-columns: 15px 1fr 6px;
+    }
 }
 
 .profil-container{

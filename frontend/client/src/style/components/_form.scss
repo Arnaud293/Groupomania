@@ -102,6 +102,14 @@ input#file{
     display: none;
 }
 
+input#file-upload {
+    z-index: 2;
+    position: absolute;
+    left: 1rem;
+    opacity: 0;
+    cursor: pointer;
+}
+
 .read-new-post-cards-container{
     background-color: white;
     border-radius: 15px;

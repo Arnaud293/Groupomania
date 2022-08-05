@@ -250,7 +250,11 @@ span.cross{
         -ms-border-radius: 20px;
         -o-border-radius: 20px;
         object-fit: cover;
-}
+    }
+
+    @media (max-width : 800px){
+        width: 95%;
+    }
 }
 
 .modify-bio{
@@ -268,4 +272,38 @@ span.cross{
     height: 17px;
     margin-left: 10px;
     margin-bottom: -3px;
+}
+
+.read-post-cards{
+    display: grid;
+    // grid-template-rows: 1fr 80% 1fr;
+    margin-left: 1%;
+    padding: 1rem;
+    line-height: 1.5rem;
+
+    & span {
+        font-weight: bold;
+    }
+
+    & .date{
+        color: gray;
+        font-style: italic;
+        font-size: smaller;
+
+        @media (max-width : 500px){
+            grid-column-start: 1;
+        }
+    }
+
+    & img{
+        object-fit: cover;
+        max-width: 100%;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        // padding-top: 1rem;
+        // padding-bottom: 1rem;
+}
 }

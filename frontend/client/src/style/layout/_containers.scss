@@ -24,6 +24,9 @@
     grid-row-start: 1;
     grid-column-start: 2;
     min-height: 200px;
+    @media (max-width : 400px){
+        margin-top: 100px;
+    }
 
 }
 
@@ -70,6 +73,12 @@
     display: grid;
     grid-template-columns: 70px 1fr;
     grid-column-start: 2;
+
+    @media (max-width : 400px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .left-post-img{
@@ -99,35 +108,7 @@
     }
 }
 
-.read-post-cards{
-    display: grid;
-    // grid-template-rows: 1fr 80% 1fr;
-    margin-left: 1%;
-    padding: 1rem;
-    line-height: 1.5rem;
 
-    & span {
-        font-weight: bold;
-    }
-
-    & .date{
-        color: gray;
-        font-style: italic;
-        font-size: smaller;
-    }
-
-    & img{
-        object-fit: cover;
-        max-width: 100%;
-        border-radius: 15px;
-        -webkit-border-radius: 15px;
-        -moz-border-radius: 15px;
-        -ms-border-radius: 15px;
-        -o-border-radius: 15px;
-        // padding-top: 1rem;
-        // padding-bottom: 1rem;
-}
-}
 
 .read-post-header{
     display: grid;
@@ -183,6 +164,14 @@
     grid-template-rows: auto;
     grid-template-columns: 77px 1fr 25%;
 
+    @media (max-width: 850px) {
+        grid-template-columns: 77px 1fr 21px;
+    }
+
+    @media (max-width : 400px){
+        grid-template-columns: 21px 1fr 21px;
+    }
+
 
 }
 
@@ -205,7 +194,9 @@
      grid-column-start: 3;
      grid-row-start: 1; 
 
- 
+    @media (max-width: 850px) {
+        display: none;
+    }
  
  
 }
@@ -229,6 +220,10 @@
      top: 22rem;  
      grid-column-start: 3;
      grid-row-start: 1; 
+    
+    @media (max-width: 850px) {
+        display: none;
+    }
 }
 
 .hint-all-card-container{
@@ -254,6 +249,15 @@
     gap: 1rem;
     margin-top: 15px;
     grid-column-start: 2;
+
+    @media (max-width: 800px){
+        flex-direction: column;
+    }
+    @media (max-width: 400px){
+        flex-direction: column;
+        margin-top: 0;
+        justify-content: flex-start;
+    }
 }
 
 .bio-container{
@@ -283,9 +287,16 @@
 .main {
     display: grid;
     grid-template-columns: 77px 1fr 20px;
+
+    @media (max-width : 400px){
+        grid-template-columns: 20px 1fr 20px;
+    }
 }
 
 .padding {
     grid-column-start: 2;
     margin-bottom: 52px;
+    @media (max-width : 400px){
+        display: none;
+    }
 }
