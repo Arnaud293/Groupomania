@@ -13,15 +13,15 @@ const SignUpForm = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    const pseudoError = document.querySelector('pseudo-error');
-    const emailError = document.querySelector('email-error');
-    const passwordError = document.querySelector('password-error');
-    const passwordConfirmError = document.querySelector('password-conf-error');
+    const pseudoError = document.querySelector('.pseudo-error');
+    const emailError = document.querySelector('.email-error');
+    const passwordError = document.querySelector('.password-error');
+    const passwordConfirmError = document.querySelector('.password-conf-error');
 
     // passwordConfirmError.innerHTML = ' ';
 
     if(password !== controlPassword){
-      passwordConfirmError.innerHTML = 'Les mots de passe ne correspondent pas'
+      passwordConfirmError.innerHTML =  'Les mots de passe ne correspondent pas'
     } else {
       await axios ({
         method : "post",
@@ -41,7 +41,14 @@ const SignUpForm = () => {
           setFormSubmit(true);
         }
       })
-      .catch((err) => { console.log(err)});
+      .catch((err) => {
+        if(err.response.data.errors){
+          pseudoError.innerHTML = err.response.data.errors.pseudo;
+          emailError.innerHTML = err.response.data.errors.email;
+          passwordError.innerHTML = err.response.data.errors.password;
+        }
+         console.log(err)
+        });
     }
 
   }

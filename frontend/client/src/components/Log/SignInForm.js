@@ -31,7 +31,12 @@ const SignInForm = () => {
         }
       })
       .catch((err) => {
-        console.log(err);
+        if(err.response.data.errors){
+          emailError.innerHTML= err.response.data.errors.email;
+          passwordError.innerHTML= err.response.data.errors.password;
+        } else {
+          window.location = '/home'
+        }
       })
     };
 

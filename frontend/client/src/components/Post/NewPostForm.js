@@ -142,8 +142,8 @@ const NewPostForm = () => {
                     {postVideo && (
                         <input onClick={() => setPostVideo('')} type="button" className='send-message-btn' value='Supprimer vidéo' />
                     )}
-                    {!isEmpty(error.format) && <p>{error.format}</p>}
-                    {!isEmpty(error.maxSize) && <p>{error.maxSize}</p>}
+                    {!isEmpty(error.format) && <p className='errors'>{error.format}</p>}
+                    {!isEmpty(error.maxSize) && <p className='errors'>{error.maxSize}</p>}
                     
 
                     <div className='post-btn'>

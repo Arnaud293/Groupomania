@@ -35,7 +35,14 @@ export const uploadPicture = (data, id) => {
             });
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        if (err.response.data.errors) {
+            dispatch({ type: GET_USER_ERRORS, payload: err.response.data.errors });
+          } else {
+            dispatch({ type: GET_USER_ERRORS, payload: "" });
+          }
+    })
   };
 };
 

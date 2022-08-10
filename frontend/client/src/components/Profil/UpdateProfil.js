@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateBio } from "../../actions/user.actions";
 import LeftNav from "../LeftNav";
-import { dateParser } from "../Utils";
+import { dateParser, isEmpty } from "../Utils";
 import UploadImg from "./UploadImg";
 import FollowHandler from "./FollowHandler";
 import ResponsiveNav from '../ResponsiveNav';
@@ -13,7 +13,7 @@ const UpdateProfil = () => {
 
   const userData = useSelector((state) => state.userReducer);
   const usersData = useSelector((state) => state.usersReducer);
-  const error = useSelector((state) => state.errorReducer.userErrors);
+  const errors = useSelector((state) => state.errorReducer.userErrors);
   const dispatch = useDispatch();
 
   const [followingPopup, setFollowingPopup] = useState(false);
@@ -39,7 +39,7 @@ const UpdateProfil = () => {
 
       {followersPopup && (
         <div className="popup-container">
-          <div className="friends-hint-card">
+          <div className="friends-hint-card-bis">
             <div className="friends-hint-card-top">
               <h1>
                 Abonnés{" "}
@@ -63,6 +63,9 @@ const UpdateProfil = () => {
                           idToFollow={user._id}
                           type={"suggestion"}
                         />
+                        <span className="responsive-hint">
+                          <FollowHandler idToFollow={user._id} type={"card"}/>
+                        </span>
                       </div>
                     );
                   }
@@ -74,7 +77,7 @@ const UpdateProfil = () => {
       )}
       {followingPopup && (
         <div className="popup-container">
-          <div className="friends-hint-card">
+          <div className="friends-hint-card-bis">
             <div className="friends-hint-card-top">
               <h1>
                 Abonnements{" "}
@@ -98,6 +101,9 @@ const UpdateProfil = () => {
                           idToFollow={user._id}
                           type={"suggestion"}
                         />
+                        <span className="responsive-hint">
+                          <FollowHandler idToFollow={user._id} type={"card"}/>
+                        </span>
                       </div>
                     );
                   } 
@@ -112,8 +118,8 @@ const UpdateProfil = () => {
           <h2>Ma photo de profil</h2>
           <img src={userData.picture} alt="profil-picture" />
           <UploadImg />
-          <p>{error.maxSize}</p>
-          <p>{error.format}</p>
+          {!isEmpty(errors.format) && <p className='errors'>{errors.format}</p>}
+          {!isEmpty(errors.maxSize) && <p className='errors'>{errors.maxSize}</p>}
         </div>
 
         <div className="main-profil-content-card">
