@@ -12,3 +12,28 @@ body{
     margin: 0;
     box-sizing: border-box;
 }
+
+.errors{
+    color: red;
+    font-weight: bolder;
+}
+
+.password-error{
+    color: red;
+    font-weight: bolder;
+}
+
+.email-error{
+    color: red;
+    font-weight: bolder;
+}
+
+.password-conf-error{
+    color: red;
+    font-weight: bolder;
+}
+
+.pseudo-error{
+    color: red;
+    font-weight: bolder;
+}

@@ -276,12 +276,20 @@
 .popup-container{
     display: flex;
     height: 100%;
-    width: 100%;
+    width: 90%;
     z-index: 10;
     position: absolute;
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(3px);
+
+    @media (max-width: 790px){
+        height: 111%;
+        width: 75%;
+    }
+    @media (max-width: 400px){
+        width: 90%;
+    }
 }
 
 .main {

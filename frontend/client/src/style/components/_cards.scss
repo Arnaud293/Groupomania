@@ -82,6 +82,28 @@
     position: fixed;
 }
 
+.friends-hint-card-bis{
+    background: $color-secondary;
+    width: 30%;
+    height: auto;
+    min-height: 50px;
+    margin-top: 40px;
+    margin-left: 1%;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    position: fixed;
+
+    @media (max-width: 790px){
+        width: 200px;
+    }
+    @media (max-width: 400px){
+        width: 160px;
+    }
+}
+
 .friends-hint-card-top{
     font-size: 0.7rem;
     // display: flex;
@@ -111,7 +133,10 @@
         -moz-border-radius: 50%;
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
-}
+    }
+    @media (max-width: 400px){
+        gap: 0.3rem;
+    }
 }
 
 span.cross{
