@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema(
       unique: true,
       trim: true,
     },
-    email: { type: String, required: true, validate: [isEmail], trim: true },
+    email: { type: String, required: true, validate: [isEmail], lowercase: true, trim: true },
     password: { type: String, required: true, max: 1024, minlength: 6 },
     bio: { type: String, max: 1024 },
     picture: {
