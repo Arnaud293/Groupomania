@@ -6,6 +6,8 @@ Stack : Mongoose, Express, React/Redux, NodeJs
 
 # 2 : Replace .env.dist(s) by the correct .env file
 
+You can find the .env files in the code folder.
+
 # 3 : Run npm install on /backend
 
 # 4 : Run npm install on /frontend/client
