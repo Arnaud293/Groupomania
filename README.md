@@ -1,4 +1,4 @@
-# How to run the project
+# How to run the project :
 
 Stack : Mongoose, Express, React/Redux, NodeJs
 
@@ -6,7 +6,7 @@ Stack : Mongoose, Express, React/Redux, NodeJs
 
 # 2 : Replace .env.dist(s) by the correct .env file
 
-You can find the .env files in the code folder.
+You can find the .env files in the admin folder.
 
 # 3 : Run npm install on /backend
 
