@@ -39,6 +39,7 @@ const SignUpForm = () => {
           passwordError.innerHTML = res.data.errors.password;
         } else {
           setFormSubmit(true);
+          alert('Inscription réussie !')
         }
       })
       .catch((err) => {
@@ -78,8 +79,6 @@ const SignUpForm = () => {
             <input class='input' type="password" name="password" id='password-conf' onChange={(e) => setControlPassword(e.target.value)} value={controlPassword}/>
             <div className='password-conf-error'></div>
             <br/>
-            {/* <input type='checkbox' id='terms'/>
-            <label htmlFor='terms'>J'accepte les <a href="/" target='_blank' rel="noopener noreferrer">conditions générales</a> </label> */}
             <input type="submit" value="Inscription" class="main-btn"/>
         </form>
         
