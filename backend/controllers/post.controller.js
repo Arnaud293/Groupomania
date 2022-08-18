@@ -67,7 +67,7 @@ module.exports.createPost = async (req, res) => {
 };
 
 module.exports.updatePost = (req, res) => {
-  if (!ObjectId.isValid(req.params.id) || !UserModel.admin === true)
+  if (!ObjectId.isValid(req.params.id) || UserModel.admin === false)
     return res.status(400).send("Id unkown : " + req.params.id);
 
   const updatedRecord = {
@@ -86,7 +86,7 @@ module.exports.updatePost = (req, res) => {
 };
 
 module.exports.deletePost = (req, res) => {
-  if (!ObjectId.isValid(req.params.id) || !UserModel.admin === true)
+  if (!ObjectId.isValid(req.params.id) || UserModel.admin === false)
     return res.status(400).send("Id unkown : " + req.params.id);
 
   PostModel.findByIdAndRemove(req.params.id, (err, docs) => {
@@ -178,7 +178,7 @@ module.exports.commentPost = (req, res) => {
 };
 
 module.exports.editCommentPost = (req, res) => {
-  if (!ObjectId.isValid(req.params.id) || !UserModel.admin === true)
+  if (!ObjectId.isValid(req.params.id) || UserModel.admin === false)
     return res.status(400).send("Id unkown : " + req.params.id);
 
   try {
@@ -203,7 +203,7 @@ module.exports.editCommentPost = (req, res) => {
 };
 
 module.exports.deleteCommentPost = (req, res) => {
-  if (!ObjectId.isValid(req.params.id) || !UserModel.admin === true)
+  if (!ObjectId.isValid(req.params.id) || UserModel.admin === false)
     return res.status(400).send("Id unkown : " + req.params.id);
 
   try {

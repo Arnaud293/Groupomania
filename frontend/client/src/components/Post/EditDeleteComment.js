@@ -47,7 +47,7 @@ const EditDeleteComment = ({comment, postId}) => {
         <img onClick={() => setEdit(!edit)} class="edit-comment-img" src={EditIcon} alt="edit-comment-icon"/>)}
         {userData.admin === true && edit === false && (
         <img onClick={() => setEdit(!edit)} class="edit-comment-img" src={EditIcon} alt="edit-comment-icon"/>)}
-        {isAuthor && edit && (
+        {isAuthor && edit && userData.admin === false && (
             <>
             <div className="edit-comment-container">
                 <textarea className="edit-comment-input" placeholder="Nouveau texte"
